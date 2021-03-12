@@ -24,7 +24,7 @@ html, body {
 
 
 nav,section,footer,article,aside{
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid rgb(84, 62, 136);
     margin: 1rem;
     border-radius: 10px;
     padding: 1rem;
@@ -41,5 +41,20 @@ section, article {
 
 }
 nav, section,footer{
-    background-color: rgb(107, 107, 10);    
+    background-color: rgb(107, 107, 10);   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

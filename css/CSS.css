@@ -1,38 +1,31 @@
 *{
 padding: 0;
 margin: 0;
-color: 0;
+color: #F2E29E;
 text-align: center;
 
 }
 
-
-
 html, body {
-    background-color:blue;
+    background-color:rgb(18, 18, 177);
 
 }
 
-
-
 .main-container{
-    border: 5px rgb(22, 255, 236);
+    border: 5px solid rgb(162, 207, 204);
     border-radius: 10px;
     margin: 2rem;
     background-color: rgb(18, 95, 161);
 }
 
-
-nav,section,footer,article,aside{
+nav, section, footer, article, aside{
     border: 2px solid rgb(84, 62, 136);
     margin: 1rem;
     border-radius: 10px;
     padding: 1rem;
 }
 
-
-
-section, article {
+aside, article {
     width: 40%;
     display: inline-block;
     height: 300px;

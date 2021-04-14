@@ -1,82 +1,90 @@
 /*
-quiero una funcion  que se encargue de validar la entrada
-de los datos para que el usuario deba de escribir mas de
- 5 caracteres dentro del campo nombre
+Quiero una funcion que se encargue de validar
+la entrada de los datos para que el usuario deba
+de escribir mas de 5 caracteres dentro del campo nombre
 */
 
 function validar(formulario){
-    alert("hola");
-    if (formulario.nombre.value.length < 5){
-        alert("Escriba poor lo menos 5 caracteres dentro del campo nombre")
+
+    if(formulario.nombre.value.length < 5){
+        alert("Escriba por lo menos 5 caracteres dentro del campo de nombre");
         formulario.nombre.focus();
         return false;
     }
 
+    /*
+    quiero validar que sea unicamente letras en el
+    campo de nombre
+    */
 
-
-    var checkOK="abcdefghijklmnñopqrstuvwxyz" + "ABCDEFGHIJKLMNñOPQRSTUVWXYZ";
+    var checkOK = "QWERTYUIOPASDFGHJKLÑZXCVBNM" 
+    + "qwertyuiopasdfghjklñzxcvbnm";
 
     var checkStr = formulario.nombre.value;
 
     var allvalid = true;
 
-    for(var i=0; i < checkStr.length; i++){
+    for(var i = 0; i < checkStr.length; i++){
         var ch = checkStr.charAt(i);
-        for (var j = 0; j < checkOK.length; j++)
-        if (ch == checkOK.charAt(j))
+        for(var j = 0; j < checkOK.length; j++)
+        if(ch == checkOK.charAt(j))
             break;
 
-
-        if (j == checkOK.length){
+        if(j == checkOK.length){
             allvalid = false;
             break;
         }
     }
-        
 
     if(!allvalid){
-        alert("Escriba solo letras en el campo nombre")
+        alert("Escribe solo letras en el campo nombre");
         formulario.nombre.focus();
         return false;
     }
 
-    
+    /*
+    debemos validar el campo de edad para que unicamente
+    acepte numeros
+    */
 
-    var checkOK="123456789";
+    var checkOK = "1234567890";
 
     var checkStr = formulario.edad.value;
 
     var allvalid = true;
 
-    for(var i=0; i < checkStr.length; i++){
+    for(var i = 0; i < checkStr.length; i++){
         var ch = checkStr.charAt(i);
-        for (var j = 0; j < checkOK.length; j++)
-        if (ch == checkOK.charAt(j))
+        for(var j = 0; j < checkOK.length; j++)
+        if(ch == checkOK.charAt(j))
             break;
 
-
-        if (j == checkOK.length){
+        if(j == checkOK.length){
             allvalid = false;
             break;
         }
     }
-        
 
     if(!allvalid){
-        alert("Escriba numeros en el campo edad")
+        alert("Escribe solo numeros en el campo edad");
         formulario.edad.focus();
         return false;
     }
 
+    /*
+    Necesitamos una expresion regular para poder validar
+    la entrada de un correo electronico
+    algo@algo.algo
+    algo.algo@algo.algo.algo
+    */ 
 
     var txt = formulario.email.value;
+
     var b = /^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;
 
-    alert("Email "+(b.test(txt)?"":"no")+" valido");
-
+    alert("Email "+(b.test(txt)?"":" no ")+" valido");
+    
     return b.test(txt);
 
 
-
 }
-
